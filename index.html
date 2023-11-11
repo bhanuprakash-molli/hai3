@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story Reader</title>
+    <link href='https://fonts.googleapis.com/css?family=Mukta' rel='stylesheet'>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            max-width: 700px;
+            min-height: 700px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-sizing:border-box;
+           box-shadow: 0px 10px 20px 5px rgba(160, 248, 248, 0.7);
+            /* box-shadow: 0px 10px 20px 2px rgba(8, 7, 7, 0.1); */
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        button {
+            /* display: none; */
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            /* justify-content: flex-start; */
+            /* cursor: pointer; */
+            /* float: inline-end; */
+
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+        #text{
+            font-size: 20px;
+            line-height: 2.5;
+            min-height: 100%;
+            min-width: 100%;
+            border: 0px solid;
+            font-family: 'Mukta';
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- STORY TITLE -->
+        <h1>**The Unexpected Visitor**</h1>
+    </header>
+    <main>
+       <nav> <h1>Chapter 1</h1></nav>
+        <div id="text"></div>
+        <!-- <footer><button id="next-button">Next Chapter</button></footer> -->
+    </main>
+
+    <script>
+       
+        
+        const textElement = document.getElementById("text");
+        const text = `
+In the small coastal town of Seaview, where the salty breeze danced with the waves, lived a young artist named Clara. Clara spent her days capturing the beauty of the sea on canvas, finding solace in the rhythmic sounds of the ocean.
+
+One stormy night, as the waves crashed against the shore and the wind howled through the cliffs, Clara heard a peculiar knock at her door. Bewildered, she opened it to find a bedraggled, little seagull seeking refuge from the tempest. The bird's eyes reflected a story of adversity and resilience.
+
+With a compassionate heart, Clara invited the seagull in, offering warmth and a few crumbs. To her surprise, the seagull didn't fly away when the storm subsided. Instead, it lingered, perching on Clara's windowsill as if sharing a silent understanding.
+
+Days turned into weeks, and the seagull, whom Clara fondly named Skylar, became her constant companion. Skylar would watch Clara paint, occasionally tilting its head as if admiring the artwork. In return, Clara shared stories of the sea and her dreams.
+
+One day, as Clara strolled along the shore, Skylar circled above her, its wings reflecting the golden hues of the sunset. To her amazement, a group of seagulls joined Skylar, forming an intricate aerial dance. It was a mesmerizing display that left Clara breathless.
+
+Word spread through the town about Clara's extraordinary bond with Skylar and the magical display witnessed on that unforgettable evening. Seaview transformed into a place of wonder, attracting visitors who marveled at the enchanting connection between the artist and the seagull.
+
+Clara's simple act of kindness had not only saved a lone seagull but had also created a ripple of magic that touched the hearts of everyone in Seaview. Skylar became a symbol of unexpected joy, a reminder that sometimes, the most extraordinary things find us when we least expect them.
+
+As Clara continued to paint, Skylar remained her muse, a feathered friend who had turned an ordinary life into an extraordinary tale. The story of the artist and the seagull became a legend in Seaview, a testament to the beauty that unfolds when one opens their heart to the unexpected.`;
+        let index = 0;
+
+        function type() {
+          if (index < text.length) {
+            textElement.innerHTML += text.charAt(index);
+            index++;
+            setTimeout(type, 80);
+          }
+        }
+        type();
+        // if(type()){
+       
+        // }
+    </script>
+</body>
+</html>
